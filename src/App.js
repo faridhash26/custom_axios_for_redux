@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import { getuser } from "./redux/simpleAction";
+import { useDispatch } from "react-redux";
+const App = () => {
+  const dispatch = useDispatch();
+  const handleget = () => {
+    dispatch(getuser());
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={handleget}>get users</button>
     </div>
   );
-}
+};
 
 export default App;
